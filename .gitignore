@@ -2,7 +2,7 @@
 
 .quickdrawcache
 
-sketch_recognition/dataset
+sketch_recognition/dataset/*
 !sketch_recognition/dataset/.gitkeep
 
 # Byte-compiled / optimized / DLL files
