@@ -8,6 +8,12 @@
 sketch_recognition/dataset/*
 !sketch_recognition/dataset/.gitkeep
 
+sketch_recognition/logs/*
+!sketch_recognition/logs/.gitkeep
+
+sketch_recognition/models/*
+!sketch_recognition/models/.gitkeep
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
