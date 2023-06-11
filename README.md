@@ -21,6 +21,7 @@ are tested, but both require a number of things to make them run.
 run it.
 - Python 3. This project uses various python libraries, and python itself. Here is a tutorial to set up python on a computer:
 https://www.digitalocean.com/community/tutorials/install-python-windows-10
+- A code editor, like the native editor of jupyter notebook, or vs code. Any editor that can run jupyter notebooks. 
 - In the project itself will be a cell of commands (all the way at the top) for pip (a python installer, comes with python after version 3.4). This will include quite a few things, and some might take a few minutes to download and install. Be sure to have a stable internet connection and some spare space on the computer hard-drive. In the case of colab, all that needs to be done is to run the cell. In the case of Jupyter notebook, it might be necessary to install them in the command prompt. Simply type 'cmd' in the windows search bar, and then copy the  commands in the cell one by one. Here is a tutorial on how to install matplotlib, to get a taste for it. https://matplotlib.org/stable/users/installing/index.html
 
 # Things we tried, but did not end up using for one reason or another.
