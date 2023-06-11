@@ -13,6 +13,7 @@ final_project/logs/*
 
 final_project/models/*
 !final_project/models/.gitkeep
+!final_project/models/model_20230520-222940
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
