@@ -5,14 +5,14 @@
 
 .quickdrawcache
 
-sketch_recognition/dataset/*
-!sketch_recognition/dataset/.gitkeep
+final_project/dataset/*
+!final_project/dataset/.gitkeep
 
-sketch_recognition/logs/*
-!sketch_recognition/logs/.gitkeep
+final_project/logs/*
+!final_project/logs/.gitkeep
 
-sketch_recognition/models/*
-!sketch_recognition/models/.gitkeep
+final_project/models/*
+!final_project/models/.gitkeep
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
