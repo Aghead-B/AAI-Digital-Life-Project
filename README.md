@@ -1,92 +1,38 @@
-# AAI-Digital-Life-Project
+# Welcome to the digital life readme, in this file we will explain various things about our project.
+- A brief overview of what this project is.
+- Install requirements, and a step by step on how to get this project working on colabs.
+- Various alternative approaches  we tried, and for one reason or another did not end up pursuing.
 
+# What is project Digital Life?
+In this project we use Artificial Intelligence to stimulate creativity in the elderly. We do this in three steps:
+Step 1, draw something! Our AI then recognizes it and gives it a label. 
+Step 2, generate association. We want a new label that is in the same general area, but not exactly the same. Think flowers and trees, not flowers and concrete. 
+Step 3, generate a new image. This image will then be displayed back to the user.
 
+In these steps we hope to help the elderly to become more creative, by giving them related and stimulating images of what
+they are drawing. If they draw a flower, out system might display back the image of a tree, and the user can in this way copy it,
+or hopefully be inspired to draw the tree themselves.
 
-## Getting started
+# Install requirements
+This project is tested on two running platforms. The first is jupyter notebook, and the second is colabs. Both of these environments
+are tested, but both require a number of things to make them run.
 
-To make it easy for you to get started with GitLab, here's a list of recommended next steps.
+- A fair computer. Since our project uses such technologies as stable diffusion and neural networks, it does require a modern computer to
+run it.
+- Python 3. This project uses various python libraries, and python itself. Here is a tutorial to set up python on a computer:
+https://www.digitalocean.com/community/tutorials/install-python-windows-10
+- A code editor, like the native editor of jupyter notebook, or vs code. Any editor that can run jupyter notebooks. 
+- In the project itself will be a cell of commands (all the way at the top) for pip (a python installer, comes with python after version 3.4). This will include quite a few things, and some might take a few minutes to download and install. Be sure to have a stable internet connection and some spare space on the computer hard-drive. Be warned that sometimes, if run on old machines, you might also need to download Microsoft Visual C++ etc. Simply follow the directions given in the error.
 
-Already a pro? Just edit this README.md and make it your own. Want to make it easy? [Use the template at the bottom](#editing-this-readme)!
+# Things we tried, but did not end up using for one reason or another.
 
-## Add your files
+Step 1:
+We initially attempted to use a CNN for sketch recognition, as they are well-suited for such tasks. However, our first CNN with a basic architecture of 7 layers did not yield satisfactory results. To improve performance, we added more convolutional layers and extended the training to 40 epochs. After the 30th epoch, the accuracy plateaued at around 65%.
 
-- [ ] [Create](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#create-a-file) or [upload](https://docs.gitlab.com/ee/user/project/repository/web_editor.html#upload-a-file) files
-- [ ] [Add files using the command line](https://docs.gitlab.com/ee/gitlab-basics/add-file.html#add-a-file-using-the-command-line) or push an existing Git repository with the following command:
+Step 2:
+In the second step, our first implementation was gensim's word2vec model. A quite good solution, with one big drawback. It works by converting the word you give it and turning it into a vector. It then downloads a file with other vectored word in it, and gets the words that are closest to the vector of the prompt. You could select how many associated word you wanted, and it was fast, lightweight and easy to use. The one big drawback, and the reason we did not end up using it is because of the downloaded file. It only had some 10.000 vectored words in it, and so the more exotic words could not be found, and so it didn't work. For these reason we stepped over to: CONTINUE HERE (this is all that Robert worked on this step) <-----------------
 
-```
-cd existing_repo
-git remote add origin https://gitlab.fdmci.hva.nl/visserr38/aai-digital-life-project.git
-git branch -M main
-git push -uf origin main
-```
-
-## Integrate with your tools
-
-- [ ] [Set up project integrations](https://gitlab.fdmci.hva.nl/visserr38/aai-digital-life-project/-/settings/integrations)
-
-## Collaborate with your team
-
-- [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
-- [ ] [Create a new merge request](https://docs.gitlab.com/ee/user/project/merge_requests/creating_merge_requests.html)
-- [ ] [Automatically close issues from merge requests](https://docs.gitlab.com/ee/user/project/issues/managing_issues.html#closing-issues-automatically)
-- [ ] [Enable merge request approvals](https://docs.gitlab.com/ee/user/project/merge_requests/approvals/)
-- [ ] [Automatically merge when pipeline succeeds](https://docs.gitlab.com/ee/user/project/merge_requests/merge_when_pipeline_succeeds.html)
-
-## Test and Deploy
-
-Use the built-in continuous integration in GitLab.
-
-- [ ] [Get started with GitLab CI/CD](https://docs.gitlab.com/ee/ci/quick_start/index.html)
-- [ ] [Analyze your code for known vulnerabilities with Static Application Security Testing(SAST)](https://docs.gitlab.com/ee/user/application_security/sast/)
-- [ ] [Deploy to Kubernetes, Amazon EC2, or Amazon ECS using Auto Deploy](https://docs.gitlab.com/ee/topics/autodevops/requirements.html)
-- [ ] [Use pull-based deployments for improved Kubernetes management](https://docs.gitlab.com/ee/user/clusters/agent/)
-- [ ] [Set up protected environments](https://docs.gitlab.com/ee/ci/environments/protected_environments.html)
-
-***
-
-# Editing this README
-
-When you're ready to make this README your own, just edit this file and use the handy template below (or feel free to structure it however you want - this is just a starting point!). Thank you to [makeareadme.com](https://www.makeareadme.com/) for this template.
-
-## Suggestions for a good README
-Every project is different, so consider which of these sections apply to yours. The sections used in the template are suggestions for most open source projects. Also keep in mind that while a README can be too long and detailed, too long is better than too short. If you think your README is too long, consider utilizing another form of documentation rather than cutting out information.
-
-## Name
-Choose a self-explaining name for your project.
-
-## Description
-Let people know what your project can do specifically. Provide context and add a link to any reference visitors might be unfamiliar with. A list of Features or a Background subsection can also be added here. If there are alternatives to your project, this is a good place to list differentiating factors.
-
-## Badges
-On some READMEs, you may see small images that convey metadata, such as whether or not all the tests are passing for the project. You can use Shields to add some to your README. Many services also have instructions for adding a badge.
-
-## Visuals
-Depending on what you are making, it can be a good idea to include screenshots or even a video (you'll frequently see GIFs rather than actual videos). Tools like ttygif can help, but check out Asciinema for a more sophisticated method.
-
-## Installation
-Within a particular ecosystem, there may be a common way of installing things, such as using Yarn, NuGet, or Homebrew. However, consider the possibility that whoever is reading your README is a novice and would like more guidance. Listing specific steps helps remove ambiguity and gets people to using your project as quickly as possible. If it only runs in a specific context like a particular programming language version or operating system or has dependencies that have to be installed manually, also add a Requirements subsection.
-
-## Usage
-Use examples liberally, and show the expected output if you can. It's helpful to have inline the smallest example of usage that you can demonstrate, while providing links to more sophisticated examples if they are too long to reasonably include in the README.
-
-## Support
-Tell people where they can go to for help. It can be any combination of an issue tracker, a chat room, an email address, etc.
-
-## Roadmap
-If you have ideas for releases in the future, it is a good idea to list them in the README.
-
-## Contributing
-State if you are open to contributions and what your requirements are for accepting them.
-
-For people who want to make changes to your project, it's helpful to have some documentation on how to get started. Perhaps there is a script that they should run or some environment variables that they need to set. Make these steps explicit. These instructions could also be useful to your future self.
-
-You can also document commands to lint the code or run tests. These steps help to ensure high code quality and reduce the likelihood that the changes inadvertently break something. Having instructions for running tests is especially helpful if it requires external setup, such as starting a Selenium server for testing in a browser.
-
-## Authors and acknowledgment
-Show your appreciation to those who have contributed to the project.
-
-## License
-For open source projects, say how it is licensed.
-
-## Project status
-If you have run out of energy or time for your project, put a note at the top of the README saying that development has slowed down or stopped completely. Someone may choose to fork your project or volunteer to step in as a maintainer or owner, allowing your project to keep going. You can also make an explicit request for maintainers.
+Step 3:
+For the third step, we tried a fair few number of things. In the end we used the model from keras: 
+https://keras.io/api/keras_cv/models/stable_diffusion/
+But we tried a number of things, from looking into payed stable diffusion options (openIA and Replicate seemed the best options we found) to looking into renting a service to run our own model. Our project ended with a local model of stabel diffusion, but we also looked into alternatives. One such was scribble diffusion, a offshoot of stable diffusion where you supply both a prompt and a scribble to make something that is not only influenced by the prompt, but also by what the user drew. This in particular would be a very good continuation of our project, since in step one we have the original scribble that the user supplied. We did not end up going down this road due to time restraint. Should a further team work on this project, scribble diffusion is our recommendation to continue.
