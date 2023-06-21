@@ -22,17 +22,37 @@ run it.
 - Python 3. This project uses various python libraries, and python itself. Here is a tutorial to set up python on a computer:
 https://www.digitalocean.com/community/tutorials/install-python-windows-10
 - A code editor, like the native editor of jupyter notebook, or vs code. Any editor that can run jupyter notebooks. 
-- In the project itself will be a cell of commands (all the way at the top) for pip (a python installer, comes with python after version 3.4). This will include quite a few things, and some might take a few minutes to download and install. Be sure to have a stable internet connection and some spare space on the computer hard-drive. Be warned that sometimes, if run on old machines, you might also need to download Microsoft Visual C++ etc. Simply follow the directions given in the error.
+- In the project itself will be a cell of commands (all the way at the top) for pip (a python installer, comes with python after version 3.4). 
+- This will include quite a few things, and some might take a few minutes to download and install. Be sure to have a 
+- stable internet connection and some spare space on the computer hard-drive. Be warned that sometimes, if run on old machines, 
+- you might also need to download Microsoft Visual C++ etc. Simply follow the directions given in the error.
 
 # Things we tried, but did not end up using for one reason or another.
 
 Step 1:
-We initially attempted to use a CNN for sketch recognition, as they are well-suited for such tasks. However, our first CNN with a basic architecture of 7 layers did not yield satisfactory results. To improve performance, we added more convolutional layers and extended the training to 40 epochs. After the 30th epoch, the accuracy plateaued at around 65%.
+We initially attempted to use a CNN for sketch recognition, as they are well-suited for such tasks. 
+However, our first CNN with a basic architecture of 7 layers did not yield satisfactory results. 
+To improve performance, we added more convolutional layers and extended the training to 40 epochs. After the 30th epoch, the accuracy plateaued at around 65%.
+
+Another alternative we used is the RNN. Which has shown to work pretty well but the input is a lot different compared 
+to the input of the CNN as it will need an array of strokes instead of images.
+It also takes a lot of time to train the RNN model(almost 12 hours), making it pretty difficult to make adjustments to the layers.
 
 Step 2:
-In the second step, our first implementation was gensim's word2vec model. A quite good solution, with one big drawback. It works by converting the word you give it and turning it into a vector. It then downloads a file with other vectored word in it, and gets the words that are closest to the vector of the prompt. You could select how many associated word you wanted, and it was fast, lightweight and easy to use. The one big drawback, and the reason we did not end up using it is because of the downloaded file. It only had some 10.000 vectored words in it, and so the more exotic words could not be found, and so it didn't work. For these reason we stepped over to: CONTINUE HERE (this is all that Robert worked on this step) <-----------------
+In the second step, our first implementation was gensim's word2vec model. A quite good solution, with one big drawback. 
+It works by converting the word you give it and turning it into a vector. It then downloads a file with other vectored word in it, 
+and gets the words that are closest to the vector of the prompt. You could select how many associated word you wanted, 
+and it was fast, lightweight and easy to use. The one big drawback, and the reason we did not end up using it is because 
+of the downloaded file. It only had some 10.000 vectored words in it, and so the more exotic words could not be found, 
+and so it didn't work. For these reason we stepped over to: CONTINUE HERE (this is all that Robert worked on this step) <-----------------
 
 Step 3:
 For the third step, we tried a fair few number of things. In the end we used the model from keras: 
 https://keras.io/api/keras_cv/models/stable_diffusion/
-But we tried a number of things, from looking into payed stable diffusion options (openIA and Replicate seemed the best options we found) to looking into renting a service to run our own model. Our project ended with a local model of stabel diffusion, but we also looked into alternatives. One such was scribble diffusion, a offshoot of stable diffusion where you supply both a prompt and a scribble to make something that is not only influenced by the prompt, but also by what the user drew. This in particular would be a very good continuation of our project, since in step one we have the original scribble that the user supplied. We did not end up going down this road due to time restraint. Should a further team work on this project, scribble diffusion is our recommendation to continue.
+But we tried a number of things, from looking into payed stable diffusion options (openIA and Replicate seemed the best options we found) 
+to looking into renting a service to run our own model. Our project ended with a local model of stabel diffusion, 
+but we also looked into alternatives. One such was scribble diffusion, a offshoot of stable diffusion where you supply 
+both a prompt and a scribble to make something that is not only influenced by the prompt, but also by what the user drew. 
+This in particular would be a very good continuation of our project, since in step one we have the original scribble that 
+the user supplied. We did not end up going down this road due to time restraint. Should a further team work on this project, 
+scribble diffusion is our recommendation to continue.
