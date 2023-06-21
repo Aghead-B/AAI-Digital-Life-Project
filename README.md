@@ -27,6 +27,7 @@ https://www.digitalocean.com/community/tutorials/install-python-windows-10
 # Things we tried, but did not end up using for one reason or another.
 
 Step 1:
+We initially attempted to use a CNN for sketch recognition, as they are well-suited for such tasks. However, our first CNN with a basic architecture of 7 layers did not yield satisfactory results. To improve performance, we added more convolutional layers and extended the training to 40 epochs. After the 30th epoch, the accuracy plateaued at around 65%.
 
 Step 2:
 In the second step, our first implementation was gensim's word2vec model. A quite good solution, with one big drawback. It works by converting the word you give it and turning it into a vector. It then downloads a file with other vectored word in it, and gets the words that are closest to the vector of the prompt. You could select how many associated word you wanted, and it was fast, lightweight and easy to use. The one big drawback, and the reason we did not end up using it is because of the downloaded file. It only had some 10.000 vectored words in it, and so the more exotic words could not be found, and so it didn't work. For these reason we stepped over to: CONTINUE HERE (this is all that Robert worked on this step) <-----------------
