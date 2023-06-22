@@ -39,12 +39,7 @@ to the input of the CNN as it will need an array of strokes instead of images.
 It also takes a lot of time to train the RNN model(almost 12 hours), making it pretty difficult to make adjustments to the layers.
 
 Step 2:
-In the second step, our first implementation was gensim's word2vec model. A quite good solution, with one big drawback. 
-It works by converting the word you give it and turning it into a vector. It then downloads a file with other vectored word in it, 
-and gets the words that are closest to the vector of the prompt. You could select how many associated word you wanted, 
-and it was fast, lightweight and easy to use. The one big drawback, and the reason we did not end up using it is because 
-of the downloaded file. It only had some 10.000 vectored words in it, and so the more exotic words could not be found, 
-and so it didn't work. For these reason we stepped over to: CONTINUE HERE (this is all that Robert worked on this step) <-----------------
+In the second step, our first implementation was gensim's word2vec model. A quite good solution, with one big drawback. It works by converting the word you give it and turning it into a vector. It then downloads a file with other vectored word in it, and gets the words that are closest to the vector of the prompt. You could select how many associated word you wanted, and it was fast, lightweight and easy to use. The one big drawback, and the reason we did not end up using it is because of the downloaded file. It only had some 10.000 vectored words in it, and so the more exotic words could not be found, and so it didn't work. For these reasons we switched to the BERT model, which allows us to use any word and retrieve associated words and overcome this limitation. With the BERT model, we can use any word as input and obtain a list of associated words. The code ensures that every word can have an associated word by filtering and removing certain words that may not provide meaningful associations. This allows us to expand the amount of words that can have word associations.
 
 Step 3:
 For the third step, we tried a fair few number of things. In the end we used the model from keras: 
