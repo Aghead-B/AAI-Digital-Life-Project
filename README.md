@@ -13,6 +13,9 @@ In these steps we hope to help the elderly to become more creative, by giving th
 they are drawing. If they draw a flower, out system might display back the image of a tree, and the user can in this way copy it,
 or hopefully be inspired to draw the tree themselves.
 
+# File architecture
+This project in divided into three steps, and the file architecture reflects this. Step 1, 2 and 3 each have their own folder, filled with experiments or implementation that we may or may not end up using in the final flow. The final flow folder contains two end products, one with the training of the CNN and one without. The final flow files should be considered the finished product, and all code elsewhere can be unfinished or even non-working. It is kept for grading reasons.
+
 # Install requirements
 This project is tested on two running platforms. The first is jupyter notebook, and the second is colabs. Both of these environments
 are tested, but both require a number of things to make them run.
